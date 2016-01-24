@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ro">
+<head>
+  <title>Script Contact Form</title>
+</head>
+<body>
+<center><h2>Script Contact Form</h2>
+<sup>from <a href="http://coursesweb.net/php-mysql/">coursesweb.net</a></sup></center><br />
+With this script (that uses PHP and AJAX) you can add a simple <b>Contact Form</b> in your website, through which the visitors can send messages to the administrator e-mail address directly from site.<br/>
+The received email contains: the Name and IP of the sender, his /her E-mail address, the Subject, and Message added in textarea in the form.<br/>
+The <em>Contact Form</em> can be added in both "*.html" or "*.php" files, but the web server must run PHP.<br/>
+ - The form is valid XHTML and has antispam verification code. The Ajax technology avoids resending data in case of refresh.<br/>
+ The script also works if the user has disabled JavaScript. As anti-spamm and re-sending data additional protection, the PHP script blocks the user to send another email in the next 5 minutes.<br/>
+ The script sends the message with the PHP mail() function, but if the server on which your website is hosted doesn't have a mail server, you can easily set to send the message via a GMail account; in this case you must have a GMail account, it's free and can be created at the page: <a href="https://www.google.com/accounts/ServiceLogin?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F%3Fhl%3Dro%26tab%3Dwm%26ui%3Dhtml%26zy%3Dl&bsv=llya694le36z&scc=1&ltmpl=default&ltmplcache=2&hl=en&from=login">GMail</a>.
+<h4>Installation:</h4>
+1. Open the "contact_mail.php" file and change the value of the <b>$to</b> variable:
+<pre>
+<b>$to = 'your_email@domain.mail';</b>		 - Replace the <i>'your_email@domain.mail'</i> with the e-mail address to which you want the message to be sent.
+</pre>
+<i>- If you want to use the SMTP from GMail, set the value 1 at <b>GMAIL</b> constant (line 13 in the "contact_mail.php" file).<br />
+- Add your GMail address at the <b>GMAIL_USER</b> constant, and add the password for this e-mail at <b>GMAIL_PASS</b>.<br />
+- When using Gmail, the messages will be sent to the e-mail address added in the "$to" variable, but via your GMail account.</i><br /><br />
+2. Copy the "<b>contact_mail.php</b>", "<b>contact.js</b>", and the "<b>sendmail</b>" folder with all its files on your server (in the same place where you have the file in which you want to include the contact form):.<br />
+3. Add the following HTML code in the "*.html", or "*.php" file in which you want to display the contact form (<i>as you can see added in the "<b>test.html</b>" file</i>):
+<pre style="color:blue; font-weight:bold;">
+&lt;form style=&quot;width:350px; background:#e8e8fe; text-align:center;&quot; id=&quot;cform&quot; method=&quot;post&quot; action=&quot;contact_mail.php&quot;&gt;
+ &lt;h3 id=&quot;fc_titlu&quot;&gt;&lt;u&gt;Send a message&lt;/u&gt;&lt;/h3&gt;
+ &lt;label for=&quot;nume&quot;&gt;Your Name: &amp;nbsp;&lt;/label&gt;&lt;input type=&quot;text&quot; name=&quot;nume&quot; id=&quot;nume&quot; size=&quot;18&quot; maxlength=&quot;40&quot; /&gt;&lt;br /&gt;
+ &lt;label for=&quot;email&quot;&gt;Your E-mail:&lt;/label&gt; &lt;input type=&quot;text&quot; name=&quot;email&quot; id=&quot;email&quot; size=&quot;18&quot; maxlength=&quot;58&quot; /&gt;&lt;br /&gt;
+ &lt;label for=&quot;subject&quot;&gt;Subject: &amp;nbsp; &lt;/label&gt; &lt;input type=&quot;text&quot; name=&quot;subject&quot; id=&quot;subject&quot; size=&quot;28&quot; maxlength=&quot;70&quot; /&gt;&lt;br /&gt;
+ &lt;label for=&quot;message&quot;&gt;Your message: (&lt;i&gt;maximum 500 characters&lt;/i&gt;)&lt;/label&gt;&lt;br /&gt;
+ &lt;textarea name=&quot;message&quot; id=&quot;message&quot; cols=&quot;35&quot; rows=&quot;6&quot;&gt;&lt;/textarea&gt;
+ &lt;input type=&quot;hidden&quot; name=&quot;anti_spam&quot; id=&quot;anti_spam&quot; value=&quot;&quot; /&gt;&lt;br /&gt;
+ &lt;a href=&quot;http://coursesweb.net/&quot; title=&quot;Free WebMaster Courses&quot; target=&quot;_blank&quot; style=&quot;font-size:8px; color:#eaeafe;&quot;&gt;coursesweb.net&lt;/a&gt;&lt;br /&gt;
+ &lt;i&gt;Verification code:&lt;/i&gt; &lt;b id=&quot;codas&quot;&gt; &lt;/b&gt;&lt;br /&gt;
+ Add the verification code: &lt;input type=&quot;text&quot; name=&quot;anti_spam1&quot; id=&quot;anti_spam1&quot; value=&quot;&quot; size=&quot;7&quot; maxlength=&quot;7&quot; /&gt;&lt;br /&gt;
+ &lt;input type=&quot;submit&quot; value=&quot;Send&quot; id=&quot;csubmit&quot; /&gt;
+&lt;/form&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;contact.js&quot;&gt;&lt;/script&gt;
+</pre><br />
+
+<i>- <b>This script is free, you can change and use it as you want, but <u>does not provide support or personal modifications</u>.</b><br/><br/>
+It was successfully tested with a general configuration on localhost with XAMPP</i>. If on other systems does not work properly, depends on their configuration.</i><br /><br />
+Respectfully,<br />
+Marius
+
+</body>
+</html>
