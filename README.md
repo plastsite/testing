@@ -1,4 +1,2 @@
-# testing
-// well
-<what>
-/*can I say*/
+# Test purpose file:
+Lorem ipsum text dolor.
